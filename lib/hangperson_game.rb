@@ -7,9 +7,15 @@ class HangpersonGame
 
   # def initialize()
   # end
-  
+
+  #Se definen accessos (setters y getters) a los atributos en la instancia de HangpersonGame
+  attr_accessor :word
+  attr_accessor :guesses
+  attr_accessor :wrong_guesses
   def initialize(word)
     @word = word
+    @guesses = ''
+    @wrong_guesses = ''
   end
 
   # You can test it by running $ bundle exec irb -I. -r app.rb
