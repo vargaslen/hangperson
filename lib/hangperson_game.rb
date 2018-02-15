@@ -18,6 +18,43 @@ class HangpersonGame
     @wrong_guesses = ''
   end
 
+  def guess(letra)
+    raise ArgumentError, 'argumento nulo' if letra == nil
+    raise ArgumentError, 'argumento caracter vacio' if letra.empty?
+    raise ArgumentError, 'argumento no letra' if ! (/[a-z]/i =~ letra)
+
+    return false if ! (/[a-z]/i =~ letra) || self.guesses.include?(letra.downcase) || self.wrong_guesses.include?(letra.downcase)
+    if self.word.include?(letra.downcase)
+      self.guesses=self.guesses+letra.downcase
+    else
+      self.wrong_guesses=self.wrong_guesses+letra.downcase
+    end
+    return  true
+
+  end
+
+  def check_win_or_lose
+    return :lose if !(self.wrong_guesses.length < 7)
+    self.word.each_char do |c|
+      return :play if ! self.guesses.include?(c)
+    end
+    return :win
+  end
+
+  def word_with_guesses
+    palabra_con_aciertos = ""
+
+    self.word.each_char do |c|
+      if self.guesses.include?(c)
+        palabra_con_aciertos+=c
+      else
+        palabra_con_aciertos+='-'
+      end
+
+    end
+    return palabra_con_aciertos
+  end
+
   # You can test it by running $ bundle exec irb -I. -r app.rb
   # And then in the irb: irb(main):001:0> HangpersonGame.get_random_word
   #  => "cooking"   <-- some random word

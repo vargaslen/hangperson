@@ -9,8 +9,8 @@ describe HangpersonGame do
     end
   end
 
-  describe 'new' do
-    it "takes a parameter and returns a HangpersonGame object" do
+  describe 'nueva' do
+    it "toma un argumento y devuelve instancia de clase HangpersonGame" do
       @hangpersonGame = HangpersonGame.new('glorp')
       expect(@hangpersonGame).to be_an_instance_of(HangpersonGame)
       expect(@hangpersonGame.word).to eq('glorp')
@@ -19,51 +19,52 @@ describe HangpersonGame do
     end
   end
 
-  describe 'guessing', :pending => true do
-    context 'correctly' do
+  describe 'adivina' do
+    context 'correctamente' do
       before :each do
         @game = HangpersonGame.new('garply')
         @valid = @game.guess('a')
       end
-      it 'changes correct guess list', :pending => true do
+      it 'cambia cadena de aciertos' do
         expect(@game.guesses).to eq('a')
         expect(@game.wrong_guesses).to eq('')
       end
-      it 'returns true', :pending => true do
+      it 'devuelve true' do
         expect(@valid).not_to be false
       end
     end
-    context 'incorrectly' do
+    context 'incorrectamente' do
       before :each do
         @game = HangpersonGame.new('garply')
         @valid = @game.guess('z')
       end
-      it 'changes wrong guess list', :pending => true do
+      it 'cambia cadena de desaciertos' do
         expect(@game.guesses).to eq('')
         expect(@game.wrong_guesses).to eq('z')
       end
-      it 'returns true', :pending => true do
+      it 'devuelve true' do
         expect(@valid).not_to be false
       end
     end
-    context 'same letter repeatedly' do
+    context 'misma letra repetida' do
       before :each do
         @game = HangpersonGame.new('garply')
         guess_several_letters(@game, 'aq')
       end
-      it 'does not change correct guess list', :pending => true do
+      it 'no cambia cadena de aciertos' do
         @game.guess('a')
         expect(@game.guesses).to eq('a')
       end
-      it 'does not change wrong guess list', :pending => true do
+      it 'no cambia cadena de desaciertos' do
         @game.guess('q')
         expect(@game.wrong_guesses).to eq('q')
       end
-      it 'returns false', :pending => true do
+      it 'devuelve false'  do
         expect(@game.guess('a')).to be false
+
         expect(@game.guess('q')).to be false
       end
-      it 'is case insensitive', :pending => true do
+      it 'indiferente a mayuscula'  do
         expect(@game.guess('A')).to be false
         expect(@game.guess('Q')).to be false
         expect(@game.guesses).not_to include('A')
@@ -74,49 +75,50 @@ describe HangpersonGame do
       before :each do
         @game = HangpersonGame.new('foobar')
       end
-      it 'throws an error when empty', :pending => true do
+      it 'Arroja un error si la cadena es vacia' do
         expect { @game.guess('') }.to raise_error(ArgumentError)
       end
-      it 'throws an error when not a letter', :pending => true do
+      it 'Arroja un error si no es letra'  do
         expect { @game.guess('%') }.to raise_error(ArgumentError)
       end
-      it 'throws an error when nil', :pending => true do
+      it 'Arroja un error si el argumento es nulo' do
         expect { @game.guess(nil) }.to raise_error(ArgumentError)
       end
     end
   end
 
-  describe 'displayed word with guesses', :pending => true do
+  describe 'Se muestran los aciertos en la palabra' do
     before :each do
       @game = HangpersonGame.new('banana')
     end
     # for a given set of guesses, what should the word look like?
+
     @test_cases = {
       'bn' =>  'b-n-n-',
       'def' => '------',
       'ban' => 'banana'
     }
     @test_cases.each_pair do |guesses, displayed|
-      it "should be '#{displayed}' when guesses are '#{guesses}'" do
+      it "Debería mostrar '#{displayed}' cuando los aciertos son '#{guesses}'" do
         guess_several_letters(@game, guesses)
         expect(@game.word_with_guesses).to eq(displayed)
       end
     end
   end
 
-  describe 'game status' do
+  describe 'Estado del juego' do
     before :each do
       @game = HangpersonGame.new('dog')
     end
-    it 'should be win when all letters guessed', :pending => true do
+    it 'Debería ser: win, si se aciertan todas' do
       guess_several_letters(@game, 'ogd')
       expect(@game.check_win_or_lose).to eq(:win)
     end
-    it 'should be lose after 7 incorrect guesses', :pending => true do
+    it 'Debería ser: lose, luego de 7 desaciertos'  do
       guess_several_letters(@game, 'tuvwxyz')
       expect(@game.check_win_or_lose).to eq(:lose)
     end
-    it 'should continue play if neither win nor lose', :pending => true do
+    it 'Continúa jugando: play, si no es win o lose'  do
       guess_several_letters(@game, 'do')
       expect(@game.check_win_or_lose).to eq(:play)
     end
