@@ -71,7 +71,7 @@ describe HangpersonGame do
         expect(@game.wrong_guesses).not_to include('Q')
       end
     end
-    context 'invalid' do
+    context 'inválido' do
       before :each do
         @game = HangpersonGame.new('foobar')
       end
