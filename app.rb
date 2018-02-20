@@ -41,7 +41,8 @@ class HangpersonApp < Sinatra::Base
     letter = params[:guess].to_s[0] #origen
 
     ### YOUR CODE HERE ###
-    byebug
+    @game = session[:game] || HangpersonGame.new('')
+    return @game.to_s
     #la sentencia before ha capturado la instancia de juego en @game
     #adivina_valida = @game.guess(letter)
     #flash[:message] = "Adivinanza no válida." unless (adivina_valida == true)
