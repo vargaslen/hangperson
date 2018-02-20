@@ -8,7 +8,7 @@ class HangpersonApp < Sinatra::Base
   register Sinatra::Flash
 
   before do
-    @game = session[:game] || HangpersonGame.new('')
+    @game = session[:game] || HangpersonGame.new(' ')
   end
 
   after do
@@ -39,7 +39,7 @@ class HangpersonApp < Sinatra::Base
   # If a guess is invalid, set flash[:message] to "Invalid guess."
   post '/guess' do
     letter = params[:guess].to_s[0] #origen
-
+    return @game.to_s
     ### YOUR CODE HERE ###
     #la sentencia before ha capturado la instancia de juego en @game
     adivina_valida = @game.guess(letter) if @guess.instance_of?(HangpersonGame)
