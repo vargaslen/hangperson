@@ -43,8 +43,8 @@ class HangpersonApp < Sinatra::Base
     ### YOUR CODE HERE ###
     #la sentencia before ha capturado la instancia de juego en @game
     #adivina_valida = @game.guess(letter)
-    flash[:message] = "Adivinanza no válida." unless (adivina_valida == true)
-    flash[:message] = "Ya probaste con esa letra" if (@game.guesses.include?(letter) || @game.wrong_guesses.include?(letter))
+    #flash[:message] = "Adivinanza no válida." unless (adivina_valida == true)
+    #flash[:message] = "Ya probaste con esa letra" if (@game.guesses.include?(letter) || @game.wrong_guesses.include?(letter))
     redirect '/show'                #origen
     params.to_s
 
