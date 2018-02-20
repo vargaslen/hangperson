@@ -9,7 +9,7 @@ class HangpersonApp < Sinatra::Base
 
   before do
     @game = session[:game] || HangpersonGame.new(' ')
-    "before"
+    return "before"
   end
 
   after do
