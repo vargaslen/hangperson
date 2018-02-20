@@ -31,7 +31,8 @@ class HangpersonApp < Sinatra::Base
     # NOTE: don't change previous line - it's needed by autograder!
 
     @game = HangpersonGame.new(word)
-    redirect '/show'
+    @game.word
+    #redirect '/show'
   end
 
   # Use existing methods in HangpersonGame to process a guess.
