@@ -39,6 +39,7 @@ class HangpersonApp < Sinatra::Base
   # If a guess is repeated, set flash[:message] to "You have already used that letter."
   # If a guess is invalid, set flash[:message] to "Invalid guess."
   post '/guess' do
+    p "parametros: #{params}"
     letter = params[:guess].to_s[0] #origen
     ### YOUR CODE HERE ###
     #la sentencia before ha capturado la instancia de juego en @game
@@ -57,7 +58,6 @@ class HangpersonApp < Sinatra::Base
   # wrong_guesses and word_with_guesses from @game.
   get '/show' do
     ### YOUR CODE HERE ###
-    p params
     erb :show # You may change/remove this line
   end
 
