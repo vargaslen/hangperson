@@ -40,7 +40,7 @@ class HangpersonApp < Sinatra::Base
   # If a guess is invalid, set flash[:message] to "Invalid guess."
   post '/guess' do
     letter = params[:guess].to_s[0] #origen
-
+    "letra recien adivinada: #{letter}"
     ### YOUR CODE HERE ###
     #la sentencia before ha capturado la instancia de juego en @game
     adivina_valida = @game.guess(letter) if @guess.instance_of?(HangpersonGame)
