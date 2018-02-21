@@ -32,7 +32,7 @@ class HangpersonApp < Sinatra::Base
 
     @game = HangpersonGame.new(word)
     @game.word
-    #redirect '/show'
+    redirect '/show'
   end
 
   # Use existing methods in HangpersonGame to process a guess.
@@ -47,7 +47,7 @@ class HangpersonApp < Sinatra::Base
     flash[:message] = "Adivinanza no válida." unless (adivina_valida == true)
     flash[:message] = "Ya probaste con esa letra" if (@game.guesses.include?(letter) || @game.wrong_guesses.include?(letter))
     redirect '/show'                #origen
-    
+
 
   end
 
