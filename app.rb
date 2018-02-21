@@ -58,7 +58,7 @@ class HangpersonApp < Sinatra::Base
   # wrong_guesses and word_with_guesses from @game.
   get '/show' do
     ### YOUR CODE HERE ###
-    return "estoy en /show con: #{@game.word}"
+    #return "estoy en /show con: #{@game.word}"
     erb :show # You may change/remove this line
   end
 
