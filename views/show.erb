@@ -1,5 +1,5 @@
 <h2>Guess a letter</h2>
-
+<% return "@game.word:#{@game.word};@game.wrong_guesses:#{@game.wrong_guesses}"%>
 <% if flash[:message] %>
   <p>
     <span class="error"><%= flash[:message] %></span>
