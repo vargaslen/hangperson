@@ -5,7 +5,7 @@
     <span class="error"><%= flash[:message] %></span>
   </p>
 <% end %>
-<p>Word:<%= @game.word%></p> #puesta por lenin
+<p>Word:<%= @game.word%></p> <!-- lenin -->
 <p>
   Wrong Guesses:
   <span class="guesses"><%= @game.wrong_guesses %></span>
@@ -20,4 +20,3 @@
   <input type="text" size="1" name="guess" autocomplete="off"/>
   <input type="submit" value="Guess!"/>
 </form>
-<%= p "la adivinanza aqui: #{params[:guess]}" %>
