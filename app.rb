@@ -58,6 +58,7 @@ class HangpersonApp < Sinatra::Base
   get '/show' do
     ### YOUR CODE HERE ###
     erb :show # You may change/remove this line
+    puts "params[] al salir de show: #{params.to_s}"
   end
 
   get '/win' do
