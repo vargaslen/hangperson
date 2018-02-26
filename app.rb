@@ -49,11 +49,11 @@ class HangpersonApp < Sinatra::Base
     @game.guess(letter)
 
     if @game.check_win_or_lose == :win
-      redirect /win
+      redirect '/win'
     elseif @game.check_win_or_lose == :lose
-        redirect /lose
+        redirect '/lose'
         else
-          redirect /show
+          redirect '/show'
         end
 
     rescue ArgumentError
