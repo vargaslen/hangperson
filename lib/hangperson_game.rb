@@ -34,9 +34,12 @@ class HangpersonGame
   end
 
   def check_win_or_lose
-    return :lose unless self.wrong_guesses.length < 7
-    self.word.each_char do |c|
-      return :play if ! self.guesses.include?(c)
+    if self.wrong_guesses.length >= 7
+      return :lose
+    else
+      self.word.each_char do |c|
+        return :play if ! self.guesses.include?(c)
+      end
     end
     return :win
   end
