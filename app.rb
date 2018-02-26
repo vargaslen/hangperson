@@ -45,7 +45,7 @@ class HangpersonApp < Sinatra::Base
     flash[:message] = "Ya probaste con esa letra" if (@game.guesses.include?(letter) || @game.wrong_guesses.include?(letter))
     adivina_valida = @game.guess(letter)
     flash[:message] = "Adivinanza no válida." unless (adivina_valida == true)
-
+    p "params.to_s:#{flash[:message]}"
     redirect '/show'                #origen
 
 
