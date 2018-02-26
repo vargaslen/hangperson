@@ -49,9 +49,9 @@ class HangpersonApp < Sinatra::Base
     @game.guess(letter)
     largo = @game.check_win_or_lose
     p "el largo=#{largo.instance_of?(String).to_s}"
-    if @game.check_win_or_lose == :win.to_s
+    if @game.check_win_or_lose == :win
       redirect '/win'
-    elseif @game.check_win_or_lose == :lose.to_s
+    elseif @game.check_win_or_lose == :lose
         redirect '/lose'
         else
           redirect '/show'
