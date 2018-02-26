@@ -45,12 +45,8 @@ class HangpersonApp < Sinatra::Base
     #la sentencia before ha capturado la instancia de juego en @game
     flash[:message] = "Ya probaste con esa letra" if (@game.guesses.include?(letter) || @game.wrong_guesses.include?(letter))
     @game.guess(letter)
-
-
-    p "params.to_s:#{flash[:message]}"
+    p "flash:#{flash[:message]}"
     #redirect '/show'                #origen
-
-
   end
 
   # Everytime a guess is made, we should eventually end up at this route.
