@@ -48,7 +48,7 @@ class HangpersonApp < Sinatra::Base
     #p "flash:#{flash[:message]}"
     @game.guess(letter)
     largo = @game.check_win_or_lose
-    p "el largo=#{largo}"
+    p "el largo=#{largo.instance_of?(String).to_s}"
     if @game.check_win_or_lose == :win.to_s
       redirect '/win'
     elseif @game.check_win_or_lose == :lose.to_s
