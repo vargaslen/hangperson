@@ -34,7 +34,7 @@ class HangpersonGame
   end
 
   def check_win_or_lose
-    p self.wrong_guesses.length.>=(7)
+    p self.wrong_guesses.caca
     if self.wrong_guesses.length.>=(7)
 
       return :lose
