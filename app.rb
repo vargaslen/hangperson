@@ -48,6 +48,14 @@ class HangpersonApp < Sinatra::Base
     #p "flash:#{flash[:message]}"
     @game.guess(letter)
 
+    if @game.check_win_or_lose == :win
+      redirect /win
+    elseif @game.check_win_or_lose == :lose
+        redirect /lose
+        else
+          redirect /show
+        end
+
     rescue ArgumentError
       flash[:message] = "Argumento invalido"
       #p "flash:#{flash[:message]}"
