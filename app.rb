@@ -47,20 +47,7 @@ class HangpersonApp < Sinatra::Base
     flash[:message] = "Ya probaste con esa letra" if (@game.guesses.include?(letter) || @game.wrong_guesses.include?(letter))
     #p "flash:#{flash[:message]}"
     @game.guess(letter)
-
-    if @game.check_win_or_lose == :win
-      redirect '/win'
-    elseif @game.check_win_or_lose == :lose
-        redirect '/lose'
-        else
-          redirect '/show'
-        end
-
-    rescue ArgumentError
-      flash[:message] = "Argumento invalido"
-      #p "flash:#{flash[:message]}"
-    end
-    redirect '/show'                #origen
+    p "@game.check_win_or_lose={@game.check_win_or_lose.to_s}"
   end
 
   # Everytime a guess is made, we should eventually end up at this route.
