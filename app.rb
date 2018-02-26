@@ -38,6 +38,7 @@ class HangpersonApp < Sinatra::Base
   # If a guess is repeated, set flash[:message] to "You have already used that letter."
   # If a guess is invalid, set flash[:message] to "Invalid guess."
   post '/guess' do
+    letter = params[:guess].to_s[0]
     @game.guess(letter)
     largo = @game.check_win_or_lose
     p "el largo=#{largo.instance_of?(String).to_s}"
