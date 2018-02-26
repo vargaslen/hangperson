@@ -22,9 +22,7 @@ class HangpersonGame
     raise ArgumentError, 'argumento nulo' if letra == nil
     raise ArgumentError, 'argumento caracter vacio' if letra.empty?
     raise ArgumentError, 'argumento no letra' if ! (/[a-z]/i =~ letra)
-    rescue ArgumentError
-      flash[:message] = "Adivinanza no válida."
-    end
+
     return false if ! (/[a-z]/i =~ letra) || self.guesses.include?(letra.downcase) || self.wrong_guesses.include?(letra.downcase)
     if self.word.include?(letra.downcase)
       self.guesses=self.guesses+letra.downcase
