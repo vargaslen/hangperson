@@ -41,7 +41,7 @@ class HangpersonApp < Sinatra::Base
     #letter = params[:guess].to_s[0]
     #@game.guess(letter)
     #largo = @game.check_win_or_lose
-    #p "igualdad?=#{largo==:play}" resultado true 
+    #p "igualdad?=#{largo==:play}" resultado true
 
     begin
     letter = params[:guess].to_s[0] #origen
@@ -52,15 +52,14 @@ class HangpersonApp < Sinatra::Base
     flash[:message] = "Ya probaste con esa letra" if (@game.guesses.include?(letter) || @game.wrong_guesses.include?(letter))
     #p "flash:#{flash[:message]}"
     @game.guess(letter)
-    largo = @game.check_win_or_lose
-    p "el largo=#{largo.instance_of?(String).to_s}"
     if @game.check_win_or_lose == :win
       redirect '/win'
-    elseif @game.check_win_or_lose == :lose
+    end
+    if @game.check_win_or_lose == :lose
         redirect '/lose'
-        else
-          redirect '/show'
-        end
+    end
+    redirect '/show'
+
 
     rescue ArgumentError
       flash[:message] = "Argumento invalido"
