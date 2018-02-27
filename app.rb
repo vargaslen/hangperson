@@ -44,7 +44,6 @@ class HangpersonApp < Sinatra::Base
     begin
 
     #p "params.to_s:#{params.to_s}"
-
     ### YOUR CODE HERE ###
     #la sentencia before ha capturado la instancia de juego en @game
     flash[:message] = "Ya probaste con esa letra" if (@game.guesses.include?(letter) || @game.wrong_guesses.include?(letter))
