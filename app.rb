@@ -41,7 +41,7 @@ class HangpersonApp < Sinatra::Base
     #letter = params[:guess].to_s[0]
     #@game.guess(letter)
     #largo = @game.check_win_or_lose
-    p "params[:guess] is nil?=#{params[:guess].eql?(nil).to_s}"
+    p "params[:guess]=#{params[:guess].to_s}"
 
   end
 
