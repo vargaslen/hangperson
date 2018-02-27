@@ -41,36 +41,8 @@ class HangpersonApp < Sinatra::Base
     #letter = params[:guess].to_s[0]
     #@game.guess(letter)
     #largo = @game.check_win_or_lose
-    #p "igualdad?=#{largo==:play}" resultado true
+    p "params[:guess].to_s#{params[:guess].to_s}"
 
-    begin
-    if params[:guess].eql?(nil)
-      letter = " "
-    else
-      letter = params[:guess].to_s[0] 
-    end
-    #p "params.to_s:#{params.to_s}"
-
-    ### YOUR CODE HERE ###
-    #la sentencia before ha capturado la instancia de juego en @game
-    flash[:message] = "Ya probaste con esa letra" if (@game.guesses.include?(letter) || @game.wrong_guesses.include?(letter))
-    #p "flash:#{flash[:message]}"
-    @game.guess(letter)
-    if @game.check_win_or_lose == :win
-      redirect '/win'
-    end
-    if @game.check_win_or_lose == :lose
-        redirect '/lose'
-    end
-    redirect '/show'
-
-
-    rescue ArgumentError
-      flash[:message] = "Argumento invalido"
-      #p "flash:#{flash[:message]}"
-
-    end
-    redirect '/show'                #origen
   end
 
   # Everytime a guess is made, we should eventually end up at this route.
