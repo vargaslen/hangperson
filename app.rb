@@ -44,7 +44,11 @@ class HangpersonApp < Sinatra::Base
     #p "igualdad?=#{largo==:play}" resultado true
 
     begin
-    letter = params[:guess].to_s[0] #origen
+    if params[:guess].eql?(nil)
+      letter = " "
+    else
+      letter = params[:guess].to_s[0] 
+    end
     #p "params.to_s:#{params.to_s}"
 
     ### YOUR CODE HERE ###
