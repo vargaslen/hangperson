@@ -40,7 +40,7 @@ class HangpersonApp < Sinatra::Base
   post '/guess' do
     letter = params[:guess].to_s[0]
     p "letter=#{letter}"
-    #@game.guess(letter)
+    p "@game.guess(letter)=#{@game.guess(letter).to_s}"
     #largo = @game.check_win_or_lose
     #p "igualdad?=#{largo==:play}" resultado true
 
