@@ -19,8 +19,19 @@ class HangpersonGame
   end
 
   def guess(letra)
-    p "letra:#{letra.instance_of?(String).to_s}"
-    
+    #p "letra:#{letra.instance_of?(String).to_s}"
+    raise ArgumentError, 'argumento nulo' if letra == nil
+    raise ArgumentError, 'argumento caracter vacio' if letra.empty?
+    raise ArgumentError, 'argumento blanco' if letra.equal?(' ')
+    raise ArgumentError, 'argumento no letra' if ! (/[a-z]/i =~ letra)
+
+    return false if ! (/[a-z]/i =~ letra) || self.guesses.include?(letra.downcase) || self.wrong_guesses.include?(letra.downcase)
+    if self.word.include?(letra.downcase)
+      self.guesses=self.guesses+letra.downcase
+    else
+      self.wrong_guesses=self.wrong_guesses+letra.downcase
+    end
+    return  true
 
   end
 
