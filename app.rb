@@ -41,7 +41,7 @@ class HangpersonApp < Sinatra::Base
     letter = params[:guess].to_s[0]
     @game.guess(letter)
     largo = @game.check_win_or_lose
-    p "el largo=#{largo.instance_of?(Symbol).to_s}"
+    p "igualdad?=#{largo==:play}"
 
 
   end
