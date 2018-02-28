@@ -91,7 +91,7 @@ class HangpersonApp < Sinatra::Base
   get '/win' do
     ### YOUR CODE HERE ###
 
-    #p "@game.juego_valido=#{@game.juego_valido.to_s}"
+    p "@game.juego_valido=#{@game.juego_valido.to_s}"
     #if @game.juego_valido.eql?("comenzado")
     #  erb :win
     #else
