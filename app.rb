@@ -61,9 +61,9 @@ class HangpersonApp < Sinatra::Base
     rescue ArgumentError
       flash[:message] = "Argumento invalido"
       #p "flash:#{flash[:message]}"
-
+      redirect '/show'
     end
-    redirect '/show'                #origen
+
 
 
   end
