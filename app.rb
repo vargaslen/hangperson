@@ -80,10 +80,18 @@ class HangpersonApp < Sinatra::Base
 
 
   end
+  get '/tramposo' do
+    ### YOUR CODE HERE ###
+
+    erb :tramposo # You may change/remove this line
+
+
+  end
 
   get '/win' do
     ### YOUR CODE HERE ###
-    erb :win # You may change/remove this line
+    p "@game.juego_valido=#{@game.juego_valido.to_s}"
+
   end
 
   get '/lose' do
