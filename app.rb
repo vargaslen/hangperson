@@ -90,14 +90,14 @@ class HangpersonApp < Sinatra::Base
 
   get '/win' do
     ### YOUR CODE HERE ###
-    session[:game] = ''
-    p "@game.juego_valido=#{@game.juego_valido.to_s}"
 
+    p "@game.juego_valido=#{@game.juego_valido.to_s}"
+    @game = ''
   end
 
   get '/lose' do
     ### YOUR CODE HERE ###
-    session[:game] = ''
+    @game = ''
     erb :lose # You may change/remove this line
   end
 
