@@ -12,10 +12,12 @@ class HangpersonGame
   attr_accessor :word
   attr_accessor :guesses
   attr_accessor :wrong_guesses
+  attr_accessor :juego_valido
   def initialize(word)
     @word = word
     @guesses = ''
     @wrong_guesses = ''
+    @juego_valido = true
   end
 
   def guess(letra)
