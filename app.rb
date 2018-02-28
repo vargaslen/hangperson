@@ -97,7 +97,7 @@ class HangpersonApp < Sinatra::Base
     #else
     #  redirect '/tramposo'
     #end
-    @game.juego_valido = ''
+    #@game.juego_valido = ''
   end
 
   get '/lose' do
