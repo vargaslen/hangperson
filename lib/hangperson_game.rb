@@ -17,7 +17,7 @@ class HangpersonGame
     @word = word
     @guesses = ''
     @wrong_guesses = ''
-    @juego_valido = true
+    @juego_valido = comenzado
   end
 
   def guess(letra)

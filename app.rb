@@ -91,12 +91,7 @@ class HangpersonApp < Sinatra::Base
   get '/win' do
     ### YOUR CODE HERE ###
     p "@game.juego_valido=#{@game.juego_valido.to_s}"
-    if @game.juego_valido
-      @game.juego_valido = false
-      erb :win # You may change/remove this line
-    else
-      redirect '/tramposo'
-    end
+
   end
 
   get '/lose' do
