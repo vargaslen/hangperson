@@ -92,12 +92,13 @@ class HangpersonApp < Sinatra::Base
     ### YOUR CODE HERE ###
 
     p "@game.juego_valido=#{@game.juego_valido.to_s}"
-    #if @game.juego_valido.eql?("comenzado")
-    #  erb :win
-    #else
-    #  redirect '/tramposo'
-    #end
-    #@game.juego_valido = ''
+    if @game.juego_valido.eql?("comenzado")
+      @game.juego_valido = ''
+      erb :win
+    else
+      redirect '/tramposo'
+    end
+
   end
 
   get '/lose' do
