@@ -10,7 +10,7 @@ Scenario: guess correct letter that I have already tried
   When I guess "b"
   And I guess "b" again
   Then the word should read "b--b--b--"
-  And I should see "You have already used that letter"
+  And I should see "Ya probaste con esa letra"
 
 Scenario: guess incorrect letter that I have already tried
 
