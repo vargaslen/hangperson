@@ -8,11 +8,11 @@ Scenario: el juego termina cuando lo gano:
 
   Given Comienzo un juego nuevo con la palabra "foobar"
   When Pruebo con las letras: f,o,b,a,r
-  Then Debería ver "You Win!"
+  Then Deberia ver "You Win!"
 
 Scenario: game over because I run out of guesses
 
   Given Comienzo un juego nuevo con la palabra "zebra"
   When Pruebo con las letras: t,u,v,w,x,y
   And I guess "d"
-  Then Debería ver "Sorry, you lose!"
+  Then Deberia ver "Sorry, you lose!"

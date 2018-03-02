@@ -10,7 +10,7 @@ Scenario: guess correct letter that I have already tried
   When I guess "b"
   And I guess "b" again
   Then the word should read "b--b--b--"
-  And Debería ver "Ya probaste con esa letra"
+  And Deberia ver "Ya probaste con esa letra"
 
 Scenario: guess incorrect letter that I have already tried
 
@@ -18,7 +18,7 @@ Scenario: guess incorrect letter that I have already tried
   When I guess "z"
   And I guess "z" again
   Then the word should read "-------"
-  And Debería ver "Ya probaste con esa letra"
+  And Deberia ver "Ya probaste con esa letra"
 
 Scenario: guessing an incorrect letter does not count towards guesses
 

@@ -8,19 +8,19 @@ Scenario: guess correct letter that occurs once
 
   Given Comienzo un juego nuevo con la palabra "garply"
   When I guess "r"
-  Then I Debería ver "r" en "span.word"
+  Then I Deberia ver "r" en "span.word"
 
 Scenario: guess correct letter that occurs multiple times
 
   Given Comienzo un juego nuevo con la palabra "animal"
   When I guess "a"
-  Then Debería ver "a---a-" en "span.word"
+  Then Deberia ver "a---a-" en "span.word"
 
 Scenario: guess incorrect letter
 
   Given Comienzo un juego nuevo con la palabra "xylophone"
   When I guess "a"
-  Then Debería ver "a" en "span.guesses"
+  Then Deberia ver "a" en "span.guesses"
 
 Scenario: multiple correct and incorrect guesses
 
