@@ -6,19 +6,19 @@ Feature: guess correct letter
 
 Scenario: guess correct letter that occurs once
 
-  Given I start a new game with word "garply"
+  Given Comienzo un juego nuevo con la palabra "garply"
   When I guess "r"
   Then I should see "r" within "span.word"
 
 Scenario: guess correct letter that occurs multiple times
 
-  Given I start a new game with word "animal"
+  Given Comienzo un juego nuevo con la palabra "animal"
   When I guess "a"
   Then I should see "a---a-" within "span.word"
 
 Scenario: guess incorrect letter
 
-  Given I start a new game with word "xylophone"
+  Given Comienzo un juego nuevo con la palabra "xylophone"
   When I guess "a"
   Then I should see "a" within "span.guesses"
 

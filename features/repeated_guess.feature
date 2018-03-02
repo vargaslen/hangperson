@@ -6,7 +6,7 @@ Feature: guess repeated letter
 
 Scenario: guess correct letter that I have already tried
 
-  Given I start a new game with word "bumblebee"
+  Given Comienzo un juego nuevo con la palabra "bumblebee"
   When I guess "b"
   And I guess "b" again
   Then the word should read "b--b--b--"
@@ -14,7 +14,7 @@ Scenario: guess correct letter that I have already tried
 
 Scenario: guess incorrect letter that I have already tried
 
-  Given I start a new game with word "giraffe"
+  Given Comienzo un juego nuevo con la palabra "giraffe"
   When I guess "z"
   And I guess "z" again
   Then the word should read "-------"
@@ -22,6 +22,6 @@ Scenario: guess incorrect letter that I have already tried
 
 Scenario: guessing an incorrect letter does not count towards guesses
 
-  Given I start a new game with word "snake"
+  Given Comienzo un juego nuevo con la palabra "snake"
   When I guess "z" 30 times in a row
   Then I should be on the show page
