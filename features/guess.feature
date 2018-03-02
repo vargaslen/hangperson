@@ -1,6 +1,6 @@
-Feature: guess correct letter
+Feature: Adivino correctamente
 
-  As a player playing Hangperson
+  En mi rol de jugador de Hangperson
   So that I can make progress toward the goal
   I want to see when my guess is correct
 
@@ -24,7 +24,7 @@ Scenario: guess incorrect letter
 
 Scenario: multiple correct and incorrect guesses
 
-  Given I start a new game with word "foobar"
-  When I make the following guesses: a,z,x,o
+  Given Comienzo un juego nuevo con la palabra "foobar"
+  When Pruebo con las letras: a,z,x,o
   Then the word should read "-oo-a-"
   And the wrong guesses should include: z,x
