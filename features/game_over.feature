@@ -1,7 +1,7 @@
 Feature: game over
 
-  As a player playing Hangperson
-  So I can get back to my life 
+  En mi rol de jugador de Hangperson
+  So I can get back to my life
   I want to know when the game is over
 
 Scenario: game over because I guess the word
