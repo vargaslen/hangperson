@@ -1,10 +1,10 @@
 Feature: game over
 
   En mi rol de jugador de Hangperson
-  So I can get back to my life
-  I want to know when the game is over
+  Y para poder regresar a mi traebajo!
+  Quisiera saber cuando este juego termine
 
-Scenario: game over because I guess the word
+Scenario: el juego termina cuando lo gano: 
 
   Given I start a new game with word "foobar"
   When I make the following guesses: f,o,b,a,r
