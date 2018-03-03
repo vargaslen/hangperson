@@ -14,5 +14,5 @@ Scenario: game over because I run out of guesses
 
   Given Comienzo un juego nuevo con la palabra "zebra"
   When Pruebo con las letras: t,u,v,w,x,y
-  And I guess "d"
+  And Pruebo con "d"
   Then Deberia ver "Sorry, you lose!"

@@ -1,28 +1,28 @@
 Feature: Adivino correctamente
 
   En mi rol de jugador de Hangperson
-  So that I can make progress toward the goal
-  I want to see when my guess is correct
+  Para querer seguir jugando hasta ganar
+  Quiero poder ver cuando mi adivinanza es correcta
 
-Scenario: guess correct letter that occurs once
+Scenario: adivino una letra que aparece solo una vez
 
   Given Comienzo un juego nuevo con la palabra "garply"
-  When I guess "r"
-  Then I Deberia ver "r" en "span.word"
+  When Pruebo con "r"
+  Then Deberia ver "r" en "span.word"
 
-Scenario: guess correct letter that occurs multiple times
+Scenario: adivino una letra que aparece varias veces
 
   Given Comienzo un juego nuevo con la palabra "animal"
-  When I guess "a"
+  When Pruebo con "a"
   Then Deberia ver "a---a-" en "span.word"
 
-Scenario: guess incorrect letter
+Scenario: mi adivinanza es incorrecta
 
   Given Comienzo un juego nuevo con la palabra "xylophone"
-  When I guess "a"
+  When Pruebo con "a"
   Then Deberia ver "a" en "span.guesses"
 
-Scenario: multiple correct and incorrect guesses
+Scenario: varias adivinanzas,algunas correctas y otras no
 
   Given Comienzo un juego nuevo con la palabra "foobar"
   When Pruebo con las letras: a,z,x,o

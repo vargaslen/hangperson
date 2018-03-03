@@ -16,7 +16,7 @@ When /^Comienzo un juego nuevo con la palabra "(.*)"$/ do |word|
   click_button "New Game"
 end
 
-When /^I guess "(.*)"(?: again)?$/ do |letter|
+When /^Pruebo con "(.*)"(?: de nuevo)?$/ do |letter|
   letter.downcase!
   fill_in("guess", :with => letter)
   click_button("Guess!")
@@ -43,7 +43,7 @@ Then /^the wrong guesses should include:(.*)$/ do |guesses|
   end
 end
 
-When /^I guess "(.*)" (.*) times in a row$/ do |letter, num|
+When /^Pruebo con "(.*)" (.*) veces seguidas$/ do |letter, num|
   letter.downcase!
   num.to_i.times do
     fill_in("guess", :with => letter)
@@ -68,7 +68,7 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
   end
 end
 
-Then /^(?:)Debería ver "([^\"]*)"(?: en "([^\"]*)")?$/ do |text, selector|
+Then /^(?:)Deberia ver "([^\"]*)"(?: en "([^\"]*)")?$/ do |text, selector|
   with_scope(selector) do
     if page.respond_to? :should
       page.should have_content(text)
